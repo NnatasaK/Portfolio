@@ -1,11 +1,28 @@
 /* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}  
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   font-family: 'Inter', sans-serif; /* Use a clean, modern sans-serif font */
   background-color: #0d0d0d; /* Dark background */
   color: #e0e0e0; /* Light text color */
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.App {
+  max-width: 100%; 
+  margin: 0 auto; 
+  padding: 10px; 
+ /*  display: flex;
+  flex-direction: column; */
+  align-items: center;
 }
 
 a {

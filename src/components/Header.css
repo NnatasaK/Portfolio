@@ -36,4 +36,21 @@
   .nav-link:hover {
     color: #64ffda; /* Change color on hover */
   }
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack navbar items on smaller screens */
+      padding: 10px;
+    }
+  
+    .nav-links {
+      
+      align-items: center;
+      gap: 10px; /* Adjust spacing */
+    }
+  
+    .logo {
+      margin-bottom: 10px; 
+    }
+  }
   
