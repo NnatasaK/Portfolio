@@ -5,9 +5,10 @@ const Portfolio = () => {
   const projects = [
     {
       title: "HistoryHunt",
-      description: "An educational app that guides users through historical landmarks and events.",
+      description: "Social geocaching game in React Native. *note: Deployment in process (code available in GitHub)",
       /* link: "https://history-hunt.netlify.app",  */
-      image: "HistoryHunt2.jpg"
+      image: "HistoryHunt2.jpg",
+      
     },
     {
       title: "X App",
