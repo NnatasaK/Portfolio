@@ -1,0 +1,39 @@
+/* Header.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0d0d0d; /* Your dark background color */
+    position: -webkit-sticky; /* Make the header sticky */
+    top: 0; /* Stick the header to the top */
+    z-index: 1000; 
+    border-bottom: 1px solid #4e4e4e9c; 
+  }
+
+  .logo-image {
+    width: 250px; 
+    height: auto; 
+  }
+  
+ 
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #64ffda; /* Change color on hover */
+  }
+  
