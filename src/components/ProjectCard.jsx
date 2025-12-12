@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onView }) => {
   return (
     <div className="project-card">
       <div className="project-image-container">
@@ -9,8 +9,10 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="project-details">
         <h3>{project.title}</h3>
-        <p>{project.description}</p>
-        <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>
+        {/* <p>{project.description}</p> */}
+         <button className="view-btn" onClick={onView}>
+          View Project
+        </button>
       </div>
     </div>
   );

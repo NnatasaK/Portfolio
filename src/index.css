@@ -6,38 +6,40 @@
   padding: 0;
 }  
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  font-family: 'Inter', sans-serif; /* Use a clean, modern sans-serif font */
-  background-color: #0d0d0d; /* Dark background */
-  color: #e0e0e0; /* Light text color */
+  margin: 20px;
+  padding: 0px;
+  
+  font-family: 'Courier New', Courier, monospace; 
+  background-color: #2a2928; 
+  color: #e0e0e0; 
   line-height: 1.6;
   overflow-x: hidden;
+  border: 1px solid #64bcff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
 }
 
 .App {
   max-width: 100%; 
   margin: 0 auto; 
-  padding: 10px; 
- /*  display: flex;
-  flex-direction: column; */
-  align-items: center;
+  padding: 20px; 
+
 }
 
 a {
-  color: #64ffda; /* Light green color for links */
+  color: #64bcff; 
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffda64; /* Light orange for hover effect */
+  color: #ffda64; 
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: 200;
   margin: 0 0 10px;
-  color: #e0e0e0;/* Keep headers in light color */
+  color: #e0e0e0;
 }
 
 p {
@@ -85,7 +87,11 @@ p {
   height: 80vh;
   text-align: center;
   padding: 0 20px;
-  background-color: #0d0d0d;
+  background-color: #2a2928;
+    border: 1px solid #64bcff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 .hero-content h1 {
@@ -96,7 +102,8 @@ p {
 
 .hero-content h2 {
   font-size: 36px;
-  color: #00ffd0;
+  color: #ff891b;
+ /*  color: #00ffd0; */
 }
 
 .hero-content p {
@@ -105,13 +112,17 @@ p {
   margin: 20px auto;
   color: #e0e0e0;
   margin-bottom: 30px;
+  border: 1px solid #64bcff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* think about the border here, its around the text that says frontend dev */
 }
 
 .hero-content .btn {
   margin-top: 30px;
   padding: 10px 20px;
-  background-color: #64ffda;
-  color: #0d0d0d;
+  background-color:#64bcff;
+  color: #2a2928;
   font-weight: bold;
   border: none;
   border-radius: 4px;
@@ -126,13 +137,13 @@ p {
 /* About Section */
 .about {
   padding: 80px 40px;
-  background-color: #0d0d0d;
+  background-color: #2a2928;
 }
 
 .about h2 {
   text-align: center;
   font-size: 36px;
-  color: #64ffda;
+  color: #ff891b;
   margin-bottom: 30px;
 }
 
@@ -143,92 +154,135 @@ p {
 }
 
 /* Portfolio Section */
+
+
+.portfolio-swiper .swiper-button-prev,
+.portfolio-swiper .swiper-button-next {
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none; /* so they don’t block dragging when hidden */
+}
+
+/* Show arrows when hovering the entire carousel */
+.portfolio-swiper:hover .swiper-button-prev,
+.portfolio-swiper:hover .swiper-button-next {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.portfolio-swiper {
+  overflow: visible !important;
+  padding-bottom: 50px !important;   
+  margin-bottom: 20px;
+}
+
+.portfolio-swiper .swiper-pagination {
+  bottom: -10px !important;          /* or -15px, -20px, etc. */
+}
+
+
 .portfolio {
-  padding: 80px 40px;
-  background-color: #0d0d0d;
+ 
+  padding: 60px 0px;
+  background-color: #2a2928;
+  border: 1px solid #64bcff;
+  border-radius: 10px;
+  margin-top: 20px;
+  overflow: hidden;
 }
 
 .portfolio h2 {
   text-align: center;
   font-size: 36px;
-  color: #64ffda;
-  margin-bottom: 40px;
+  color: #ff891b;
+   margin-bottom: 40px; 
 }
 
-.portfolio-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
+/* Card Grid */
 
-/* ProjectCard.css */
-
+/* Individual Card */
 .project-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: #2a2928;
+  border: 1px solid #64bcff;
+  border-radius: 10px;
   overflow: hidden;
-  margin: 20px;
-  width: 300px; /* Adjust the width as needed */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   text-align: center;
-  background-color: #0d0d0d;
-  color: #e0e0e0;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;   /* Centers card inside grid cell */
+  display: flex;
+  flex-direction: column;
 }
+
 
 .project-image-container {
   width: 100%;
-  height: auto; /* Allow height to adjust based on aspect ratio */
+  height: 180px; 
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
+  background-color: #1f1f1f33;
 }
 
-/* Styling for the project image */
 .project-image {
-  width: 90%; /* Set maximum width */
-  max-height: 150px; /* Set maximum height */
-  object-fit: contain; /* Maintain aspect ratio, no cropping */
-  margin: 0 auto;
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
+/* Text Section */
 .project-details {
   padding: 20px;
+  flex-grow: 1; /* makes sure all cards have equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* Title */
 .project-details h3 {
   font-size: 20px;
-  margin: 10px 0;
-  color: #64ffda; /* Title color */
+  margin-bottom: 0px;
+  color: #ff891b;
 }
 
+/* Description */
 .project-details p {
   font-size: 14px;
-  color: #e0e0e0; /* Description text color */
+  color: #e0e0e0;
+  margin-top: 0;
 }
 
+/* Link Button */
 .project-details a {
   text-decoration: none;
-  color: #64ffda; /* Link color */
+  color: #64bcff;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .project-details a:hover {
-  color: #e0e0e0; /* Hover effect for link */
+  color: #ffda64;
 }
 
 
 /* Contact Section */
 .contact {
   padding: 80px 40px;
-  background-color: #0d0d0d;
+  background-color: #2a2928;
+  border: 1px solid #64bcff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .contact h2 {
   text-align: center;
   font-size: 36px;
-  color: #64ffda;
+  color: #ff891b;
   margin-bottom: 30px;
 }
 
@@ -243,9 +297,9 @@ p {
 .footer {
   text-align: center;
   padding: 20px 40px;
-  background-color: #0d0d0d;
+  background-color: #2a2928;
   color: #e0e0e0;
-  border-top: 1px solid #1f1f1f;
+
 }
 
 /* Home.css */
@@ -253,15 +307,19 @@ p {
 /* Skills Section Styles */
 .skills {
   padding: 60px 40px;
-  background-color: #0d0d0d; /* Background color for the skills section */
+  background-color: #2a2928; /* Background color for the skills section */
   color: #e0e0e0; /* Text color */
   text-align: center;
+  border: 1px solid #64bcff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .skills h2 {
   font-size: 36px;
   margin-bottom: 40px;
-  color: #64ffda; /* Your primary accent color */
+  color: #ff891b; 
 }
 
 .skills-container {
@@ -290,15 +348,92 @@ p {
 }
 
 .skill-item {
-  background-color: #1f1f1f; /* Background color for each skill item */
+  background-color: #2a2928; 
   padding: 10px 20px;
   border-radius: 5px;
   color: #e0e0e0;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  border: 1px solid #64bcff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    
 }
 
 .skill-item:hover {
-  background-color: #64ffda; /* Hover color */
-  color: #0d0d0d; /* Text color on hover */
+  background-color: #ff891b; /* Hover color */
+  color: #2a2928; /* Text color on hover */
+}
+
+.blurred {
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal window */
+.modal-window {
+  background: #2a2928;
+  border: 1px solid #64bcff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 750px;
+  max-width: 90%;
+    max-height: none;
+ 
+ 
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #ffda64;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-window img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.view-btn {
+  background: #64bcff;
+  color: #2a2928;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+}
+
+.view-btn:hover {
+  background: #ffda64;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
 }

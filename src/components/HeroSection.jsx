@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="hero">
       <div className="hero-content">
         <h1>Hi, my name is Nataša Kolarić.</h1>
-        <h2>I build things for the web.</h2>
+        <h2>Welcome to my portfolio.</h2>
         <p>I'm a Frontend Developer specializing in Web Security.</p>
         <a href="#portfolio" className="btn">View My Work</a>
       </div>
