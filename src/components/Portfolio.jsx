@@ -15,7 +15,8 @@ const Portfolio = () => {
       title: "HistoryHunt",
       description:"History Hunt is a social geocaching game built with React Native (Expo) and Firebase. Users create custom 'Hunts' by placing markers on a map representing real-world checkpoints. Friends and family are invited to join, navigate to each location using GPS, and submit photos as proof of visit. The first player to complete all checkpoints and reach the final meeting point wins. Features real-time location tracking, camera integration, Google Maps, Firebase Auth/Firestore/Storage, push notifications, and live progress updates. Currently finalizing deployment phase – full source on GitHub.",
       image: "HistoryHunt2.jpg",
-      link: null
+      link: null,
+      video: "HH.mp4"
     },
     {
       title: "Meditation App",
@@ -24,15 +25,23 @@ const Portfolio = () => {
       link: "https://play.google.com/store/apps/details?id=com.worldmeditation&hl=en"
     },
     {
+      title: "Movie Platform",
+      description: "Developed a Netflix-like web application with React and a custom backend, allowing users to browse, search, and bookmark movies. Implemented carousels for trending and recommended films, category-based browsing, detailed movie views, and persistent user authentication. Included an admin panel for managing movie data, full mobile responsiveness, and integration with a backend API. The project followed Agile practices with Pull Requests, code reviews, and automated frontend testing, ensuring a polished and user-friendly interface.",
+      image: "movie.png",
+      video: "movie.mp4",
+      link: "https://mmovieplatform.netlify.app/"
+    },
+    {
       title: "X App",
-      /* description: "A social media clone app developed as part of a collaborative project.", */
+      description: "Developed a web application using React, Node.js, and MongoDB that functions as a social forum for sharing links and short posts with friends, similar to Twitter. Implemented full frontend and backend functionality, including user authentication, posting, and content feeds. The project also included automated testing and a Continuous Integration (CI) pipeline to run regression tests on every commit. Followed Agile methodology with daily standups, sprints, and a live SCRUM board to manage development progress. Key features include sharing posts up to 140 characters, full-stack implementation, automated testing with CI, and Agile project workflow with sprint planning and task tracking.",
       link: "https://twitterx-clone-project.netlify.app",
       image: "Xhome2.png"
     },
     {
       title: "DogBook",
-     /*  description: "A React-based social network application for dog lovers.", */
+      description: "Developed a web application using React as an admin tool for dog daycare staff. The app allows managing dog profiles, including profile pictures, short descriptions, and friend lists. Built using modern front-end practices while integrating back-end knowledge, applying common architecture patterns like MVC, and leveraging third-party libraries where appropriate.",
       link: "https://dog-book.netlify.app",
+      video: "dogbook.mp4",
       image: "dogbookMain.png"
     },
     {
@@ -75,24 +84,41 @@ const Portfolio = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-       {selectedProject && (
-        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-          <div className="modal-window" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedProject(null)}>✖</button>
+     {selectedProject && (
+  <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+    <div className="modal-window" onClick={(e) => e.stopPropagation()}>
+      <button className="modal-close" onClick={() => setSelectedProject(null)}>✖</button>
 
-            <h2>{selectedProject.title}</h2>
-            {/* <img src={selectedProject.image} alt={selectedProject.title} /> */}
+      <h2>{selectedProject.title}</h2>
+      <p>{selectedProject.description}</p>
 
-            <p>{selectedProject.description}</p>
-
-            {selectedProject.link && (
-              <a href={selectedProject.link} target="_blank" rel="noreferrer">
-                Open Project
-              </a>
-            )}
-          </div>
-        </div>
+      {/* Video */}
+      {selectedProject.video && (
+        <video
+          src={selectedProject.video}
+          controls
+          autoPlay
+          style={{ width: '100%', maxHeight: '200px', borderRadius: '8px', marginBottom: '1rem' }}
+        >
+          Your browser does not support the video tag.
+        </video>
       )}
+
+      {/* Link */}
+      {selectedProject.link && (
+        <a 
+          href={selectedProject.link} 
+          target="_blank" 
+          rel="noreferrer"
+          style={{ display: 'inline-block', marginTop: '10px' }}
+        >
+          Open Project
+        </a>
+      )}
+    </div>
+  </div>
+)}
+
     </section>
   );
 };
