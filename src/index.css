@@ -6,7 +6,7 @@
   padding: 0;
 }  
 body {
-  margin: 20px;
+  margin: 50px;
   padding: 0px;
   
   font-family: 'Courier New', Courier, monospace; 
@@ -23,7 +23,7 @@ body {
 .App {
   max-width: 100%; 
   margin: 0 auto; 
-  padding: 20px; 
+  /* padding: 10px;  */
 
 }
 
@@ -494,6 +494,9 @@ p {
 }
 
 @media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
   section {
     padding: 30px 15px !important;
   }
